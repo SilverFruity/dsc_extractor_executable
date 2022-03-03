@@ -202,6 +202,7 @@ static std::optional<MappedCache> mapCacheFile(const char* path,
                                                uint8_t* buffer,
                                                bool isLocalSymbolsCache)
 {
+    fprintf(stderr, "Start extract Sub file: %s\n", path);
     struct stat statbuf;
     if ( ::stat(path, &statbuf) ) {
         fprintf(stderr, "Error: stat failed for dyld shared cache at %s\n", path);
